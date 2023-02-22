@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Kalkuliyator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: rebeccapurple;
+            color: white;
+            text-align: center;
+        }
+        header h1 {
+            padding-top: 30px;
+        }
+        .netce {
+            width: 100%;
+            height: 160px;
+            background-color: blue;
+            margin: 3%;
+            justify-content: center;
+        }
+        .netce h1 {
+            color: white;
+        }
+        footer {
+            display: flex;
+            width: 100%;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+            background-color: rebeccapurple;
+            color: white;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BMI Kalkulyartor</h1>
+        </header>
+
+        <div class="netce">
+            <h1 id="else"></h1>
+        </div>
+        <footer>
+            <h3>Design by Ramiz Refizade &copy; 2023</h3>
+        </footer>
+    </div>
+
+    
+    <script>
+
+        let boy = prompt('Boyunuz Neçədir ?');
+        let kq = prompt('Neçə kiloqramsınız ?');
+        let bmi = (kq / (boy * boy)*10000);
+        
+        if (bmi < 18) {
+            bmi = 'Siz, çəki azlığından əziyyət çəkirsiniz.';
+        } else if (bmi < 20) {
+            bmi = 'Sizin, çəkiniz azdır. Lakin sağlamlıq üçün zərərli deyil.';
+        } else if (bmi < 26) {
+            bmi = 'Sizin, çəkiniz normaldır. Təbriklər !!!';
+        } else if (bmi < 28) {
+            bmi = 'Sizin artıq çəkiniz var.';
+        } else if (bmi < 31) {
+            bmi = 'Siz, 1-ci dərəcəli artıq çəkidən əziyyət çəkirsiniz.';
+        } else if (bmi < 36) {
+            bmi = 'Siz, 2-ci dərəcəli artıq çəkidən əziyyət çəkirsiniz.';
+        } else if (bmi < 41) {
+            bmi = 'Siz, 3-cü dərəcəli artıq çəkidən əziyyət çəkirsiniz.';
+        } else if (bmi > 41) {
+            bmi = 'Siz, 4-cü dərəcəli artıq çəkidən əziyyət çəkirsiniz.';
+        }
+
+        document.getElementById('else').innerHTML = bmi;
+    </script>
+</body>
+</html>
